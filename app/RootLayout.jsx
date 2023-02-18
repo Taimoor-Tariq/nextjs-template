@@ -1,12 +1,12 @@
 'use client';
 
-import { useServerInsertedHTML, usePathname, useSearchParams } from 'next/navigation';
 import { CacheProvider } from '@emotion/react';
-import { useEmotionCache, MantineProvider } from '@mantine/core';
-import { NotificationsProvider } from '@mantine/notifications';
+import { MantineProvider, useEmotionCache } from '@mantine/core';
 import { ModalsProvider } from '@mantine/modals';
-import { useEffect, useState } from 'react';
+import { NotificationsProvider } from '@mantine/notifications';
 import { NavigationProgress, completeNavigationProgress } from '@mantine/nprogress';
+import { usePathname, useSearchParams, useServerInsertedHTML } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 export default function RootStyleRegistry({ children }) {
     const cache = useEmotionCache();
