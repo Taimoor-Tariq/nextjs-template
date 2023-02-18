@@ -1,12 +1,12 @@
-import './(components)/globals.sass';
-import Root from './(components)/emotion';
+import './globals.sass';
+import RootLayout from './RootLayout';
 
-export default function RootLayout({ children }) {
+export default function Layout({ children }) {
     return (
         <html lang="en">
             <head />
             <body>
-                <Root children={children} />
+                <RootLayout children={children} />
             </body>
         </html>
     );
