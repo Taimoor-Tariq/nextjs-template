@@ -10,15 +10,17 @@ export default async function Page() {
     let info = await data;
 
     return (
-        <div className='flex flex-col gap-4 p-4'>
-            <span className='text-3xl font-semibold'>{info}</span>
-            <Link href="/" className="text-primary-500 hover:underline hover:text-primary-300">Home Page</Link>
+        <div className="flex flex-col gap-4 p-4">
+            <span className="text-3xl font-semibold">{info}</span>
+            <Link href="/" className="text-primary-500 hover:text-primary-300 hover:underline">
+                Home Page
+            </Link>
         </div>
     );
-};
+}
 
 export async function generateMetadata({ params, searchParams }) {
     return {
         title: 'Page 1',
     };
-};
+}
