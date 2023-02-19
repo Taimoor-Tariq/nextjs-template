@@ -8,7 +8,7 @@ export default function Component() {
         { label: 'Item 2', action: () => console.log('Item 2'), group: 'Group 1', kbd: ['ctrl', 'd'] },
         { label: 'Item 3', action: () => console.log('Item 3'), group: 'Group 1' },
     ]}>
-        <div className='bg-red-500'>
+        <div className='bg-gray-800'>
             <span>Right click me</span>
         </div>
     </ContextMenuWrapper>
