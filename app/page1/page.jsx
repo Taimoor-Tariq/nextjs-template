@@ -1,4 +1,5 @@
 import Link from '@/components/Link';
+import Ele1 from './el.component';
 
 export default async function Page() {
     const data = new Promise((resolve) => {
@@ -15,6 +16,7 @@ export default async function Page() {
             <Link href="/" className="text-primary-500 hover:text-primary-300 hover:underline">
                 Home Page
             </Link>
+            <Ele1 />
         </div>
     );
 }
