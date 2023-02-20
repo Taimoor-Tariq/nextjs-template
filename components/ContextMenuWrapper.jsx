@@ -29,10 +29,11 @@ export default function ContextMenuWrapper({ children, menuItems, menuStyles, me
     const RenderMenuItems = () => {
         let groups = parseMenuItems(menuItems);
 
-        if (groups['']) groups = {
-            '': groups[''],
-            ...groups,
-        }
+        if (groups[''])
+            groups = {
+                '': groups[''],
+                ...groups,
+            };
 
         const RenderKbd = ({ kbd }) => {
             return (
@@ -47,7 +48,7 @@ export default function ContextMenuWrapper({ children, menuItems, menuStyles, me
                     })}
                 </>
             );
-        }
+        };
 
         return (
             <>
@@ -91,7 +92,7 @@ export default function ContextMenuWrapper({ children, menuItems, menuStyles, me
             },
         });
         contextMenu.open();
-    }
+    };
 
     return (
         <div
@@ -103,21 +104,16 @@ export default function ContextMenuWrapper({ children, menuItems, menuStyles, me
             }}
             {...props}
         >
-            <Menu
-                shadow="md"
-                width={menuWidth}
-                opened={menuOpen}
-                position="bottom-start"
-                closeOnItemClick={true}
-                offset={0}
-            >
+            <Menu shadow="md" width={menuWidth} opened={menuOpen} position="bottom-start" closeOnItemClick={true} offset={0}>
                 <div ref={menuRef}>
                     <Menu.Target>
-                        <div style={{
-                            position: 'fixed',
-                            top: state.menuPosition.y,
-                            left: state.menuPosition.x,
-                        }} />
+                        <div
+                            style={{
+                                position: 'fixed',
+                                top: state.menuPosition.y,
+                                left: state.menuPosition.x,
+                            }}
+                        />
                     </Menu.Target>
 
                     <Menu.Dropdown>
