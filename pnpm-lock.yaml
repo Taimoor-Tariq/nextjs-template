@@ -9,7 +9,7 @@ specifiers:
   '@mantine/next': ^5.10.4
   '@mantine/notifications': ^5.10.4
   '@mantine/nprogress': ^5.10.4
-  '@tabler/icons': ^2.4.0
+  '@tabler/icons-react': 2.4.0
   '@tailwindcss/line-clamp': ^0.4.2
   autoprefixer: ^10.4.13
   next: ^13.1.6
@@ -29,7 +29,7 @@ dependencies:
   '@mantine/next': 5.10.4_pnokhhiiffeanlj7xihut5qdrq
   '@mantine/notifications': 5.10.4_zvr3twhaqlaxovla5vk46k3pgm
   '@mantine/nprogress': 5.10.4_zvr3twhaqlaxovla5vk46k3pgm
-  '@tabler/icons': 2.4.0
+  '@tabler/icons-react': 2.4.0_react@18.2.0
   next: 13.1.6_wiv434v7erz4aedd5whhdwmpv4
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -38,7 +38,7 @@ devDependencies:
   '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.7
   autoprefixer: 10.4.13_postcss@8.4.21
   postcss: 8.4.21
-  prettier-plugin-tailwindcss: 0.2.3
+  prettier-plugin-tailwindcss: 0.2.3_prettier@2.8.4
   sass: 1.58.3
   tailwindcss: 3.2.7_postcss@8.4.21
 
@@ -618,6 +618,16 @@ packages:
     resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
     dependencies:
       tslib: 2.5.0
+    dev: false
+
+  /@tabler/icons-react/2.4.0_react@18.2.0:
+    resolution: {integrity: sha512-U04bSknpXPdZP8soAnMPiz4g6PXPfWHfMoe2qhDoRlnS8UJ8JHHE/k4Lx4rw2Tfy9a2QJeoPV5HQIeKXrNPHGA==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@tabler/icons': 2.4.0
+      prop-types: 15.8.1
+      react: 18.2.0
     dev: false
 
   /@tabler/icons/2.4.0:
@@ -1331,7 +1341,7 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /prettier-plugin-tailwindcss/0.2.3:
+  /prettier-plugin-tailwindcss/0.2.3_prettier@2.8.4:
     resolution: {integrity: sha512-s2N5Dh7Ao5KTV1mao5ZBnn8EKtUcDPJEkGViZIjI0Ij9TTI5zgTz4IHOxW33jOdjHKa8CSjM88scelUiC5TNRQ==}
     engines: {node: '>=12.17.0'}
     peerDependencies:
@@ -1382,6 +1392,14 @@ packages:
         optional: true
       prettier-plugin-twig-melody:
         optional: true
+    dependencies:
+      prettier: 2.8.4
+    dev: true
+
+  /prettier/2.8.4:
+    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /process-nextick-args/2.0.1:
