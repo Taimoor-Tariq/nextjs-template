@@ -116,33 +116,10 @@ export default function ContextMenuWrapper({ children, menuItems, menuStyles, me
                         />
                     </Menu.Target>
 
-                    <Menu.Dropdown>
-                        {/* {Object.keys(parseMenuItems(menuItems)).map((group) => {
-                            return (
-                                <div key={group}>
-                                    {group && (
-                                        <>
-                                            <Menu.Divider />
-                                            <Menu.Label>{group}</Menu.Label>
-                                        </>
-                                    )}
-                                    {parseMenuItems(menuItems)[group].map((item) => {
-                                        return (
-                                            <Menu.Item
-                                                key={item.label}
-                                                onClick={() => {
-                                                    item.action();
-                                                    contextMenu.close();
-                                                }}
-                                                disabled={item.disabled}
-                                            >
-                                                {item.label}
-                                            </Menu.Item>
-                                        );
-                                    })}
-                                </div>
-                            );
-                        })} */}
+                    <Menu.Dropdown style={{
+                        zIndex: 1000,
+                        position: 'fixed',
+                    }}>
                         <RenderMenuItems />
                     </Menu.Dropdown>
                 </div>
