@@ -7,6 +7,7 @@ import { NotificationsProvider } from '@mantine/notifications';
 import { NavigationProgress, completeNavigationProgress } from '@mantine/nprogress';
 import { usePathname, useSearchParams, useServerInsertedHTML } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { theme } from './Theme.js';
 
 export default function RootStyleRegistry({ children }) {
     const cache = useEmotionCache();
@@ -34,16 +35,7 @@ export default function RootStyleRegistry({ children }) {
 
     return (
         <CacheProvider value={cache}>
-            <MantineProvider
-                theme={{
-                    colorScheme: 'dark',
-                    loader: 'dots',
-                    primaryColor: 'pink',
-                    primaryShade: 7,
-                }}
-                withGlobalStyles
-                withNormalizeCSS
-            >
+            <MantineProvider theme={theme} withGlobalStyles withNormalizeCSS>
                 <NotificationsProvider>
                     <ModalsProvider>
                         <NavigationProgress autoReset={true} size={2} />

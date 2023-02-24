@@ -116,10 +116,12 @@ export default function ContextMenuWrapper({ children, menuItems, menuStyles, me
                         />
                     </Menu.Target>
 
-                    <Menu.Dropdown style={{
-                        zIndex: 1000,
-                        position: 'fixed',
-                    }}>
+                    <Menu.Dropdown
+                        style={{
+                            zIndex: 1000,
+                            position: 'fixed',
+                        }}
+                    >
                         <RenderMenuItems />
                     </Menu.Dropdown>
                 </div>
