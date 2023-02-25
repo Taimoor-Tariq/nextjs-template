@@ -5,7 +5,7 @@ import { Menu, Kbd } from '@mantine/core';
 
 export default function ContextMenuWrapper({ children, menuItems, menuStyles, menuWidth = 200, ...props }) {
     const [menuOpen, contextMenu] = useDisclosure(false);
-    const menuRef = useClickOutside(() => contextMenu.close(), ['mousedown', 'touchstart', 'contextmenu']);
+    const menuRef = useClickOutside(() => contextMenu.close(), ['mousedown', 'touchstart']);
     const [state, setState] = useSetState({
         menuPosition: { x: 0, y: 0 },
     });
@@ -95,7 +95,7 @@ export default function ContextMenuWrapper({ children, menuItems, menuStyles, me
     };
 
     return (
-        <div
+        <span
             onContextMenu={(e) => {
                 e.preventDefault();
                 if (!menuOpen) return openMenu(e);
@@ -127,6 +127,6 @@ export default function ContextMenuWrapper({ children, menuItems, menuStyles, me
                 </div>
             </Menu>
             {children}
-        </div>
+        </span>
     );
 }
