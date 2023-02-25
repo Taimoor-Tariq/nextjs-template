@@ -9,4 +9,4 @@
 This is a template for creating a [Next.js](https://nextjs.org/) project with [Mantine](https://mantine.dev/) and [Tailwind CSS](https://tailwindcss.com/).
 
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/https://github.com/Taimoor-Tariq/nextjs-template)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/Taimoor-Tariq/nextjs-template)
