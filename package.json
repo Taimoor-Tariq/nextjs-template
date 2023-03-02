@@ -10,7 +10,7 @@
         "@mantine/notifications": "^5.10.5",
         "@mantine/nprogress": "^5.10.5",
         "@tabler/icons-react": "2.4.0",
-        "next": "^13.2.1",
+        "next": "^13.2.3",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
