@@ -3,6 +3,9 @@ module.exports = {
     content: ['./app/**/*.{js,jsx}', './components/**/*.{js,jsx}'],
     theme: {
         extend: {
+            boxShadow: {
+                'ctx': '0 0 25px 10px rgba(0, 0, 0, 0.3)',
+            },
             colors: {
                 mantine: {
                     border: '#373A40',

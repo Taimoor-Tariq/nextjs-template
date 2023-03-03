@@ -3,7 +3,7 @@
 import { CacheProvider } from '@emotion/react';
 import { MantineProvider, useEmotionCache } from '@mantine/core';
 import { ModalsProvider } from '@mantine/modals';
-import { NotificationsProvider } from '@mantine/notifications';
+import { Notifications } from '@mantine/notifications';
 import { NavigationProgress, completeNavigationProgress } from '@mantine/nprogress';
 import { usePathname, useSearchParams, useServerInsertedHTML } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -36,12 +36,22 @@ export default function RootStyleRegistry({ children }) {
     return (
         <CacheProvider value={cache}>
             <MantineProvider theme={theme} withGlobalStyles withNormalizeCSS>
-                <NotificationsProvider>
-                    <ModalsProvider>
-                        <NavigationProgress autoReset={true} size={2} />
-                        {children}
-                    </ModalsProvider>
-                </NotificationsProvider>
+                <ModalsProvider
+                    modalProps={{
+                        centered: true,
+                        closeOnClickOutside: true,
+                        classNames: {
+                            modal: 'border-2 border-gray-700 rounded-lg bg-gray-800',
+                            overlay: 'z-0',
+                            title: 'text-xl font-semibold',
+                            close: 'text-red-400',
+                        },
+                    }}
+                >
+                    <Notifications />
+                    <NavigationProgress autoReset={true} size={2} />
+                    {children}
+                </ModalsProvider>
             </MantineProvider>
         </CacheProvider>
     );
