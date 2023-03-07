@@ -3,11 +3,12 @@
 import { useDisclosure, useClickOutside, useSetState } from '@mantine/hooks';
 import { Menu, Kbd } from '@mantine/core';
 import { IconChevronRight } from '@tabler/icons-react';
-import { Fragment } from 'react';
+import { Fragment, useEffect, useRef } from 'react';
 
 export default function ContextMenuWrapper({ children, menuItems, menuWidth, ...props }: ContextMenuWrapperProps) {
     const [menuOpen, contextMenu] = useDisclosure(false);
     const menuRef = useClickOutside(() => contextMenu.close(), ['mousedown', 'touchstart']);
+    const menuOrigin = useRef<HTMLDivElement>(null);
     const [state, setState] = useSetState({
         menuPosition: { x: 0, y: 0 },
     });
@@ -98,6 +99,13 @@ export default function ContextMenuWrapper({ children, menuItems, menuWidth, ...
         contextMenu.open();
     };
 
+    useEffect(() => {
+        if (menuOrigin.current) {
+            menuOrigin.current.style.top = state.menuPosition.y + 'px';
+            menuOrigin.current.style.left = state.menuPosition.x + 'px';
+        }
+    }, [state.menuPosition]);
+
     return (
         <span
             onContextMenu={(e) => {
@@ -106,10 +114,8 @@ export default function ContextMenuWrapper({ children, menuItems, menuWidth, ...
                 contextMenu.close();
                 setTimeout(() => openMenu(e));
             }}
-            style={{
-                cursor: 'context-menu',
-            }}
             {...props}
+            className={`cursor-context-menu ${props.className}`}
         >
             <Menu
                 shadow="lg"
@@ -125,13 +131,7 @@ export default function ContextMenuWrapper({ children, menuItems, menuWidth, ...
             >
                 <div ref={menuRef}>
                     <Menu.Target>
-                        <div
-                            style={{
-                                position: 'fixed',
-                                top: state.menuPosition.y,
-                                left: state.menuPosition.x,
-                            }}
-                        />
+                        <div className="fixed" ref={menuOrigin} />
                     </Menu.Target>
 
                     <Menu.Dropdown
