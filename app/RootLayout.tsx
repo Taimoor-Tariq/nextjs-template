@@ -41,7 +41,8 @@ export default function RootStyleRegistry({ children }: { children: React.ReactN
                         centered: true,
                         closeOnClickOutside: true,
                         classNames: {
-                            body: 'border-2 border-gray-700 rounded-lg bg-gray-800',
+                            content: 'border-2 border-gray-700 rounded-lg bg-gray-800',
+                            header: 'bg-transparent',
                             overlay: 'z-0',
                             title: 'text-xl font-semibold',
                             close: 'text-red-400',
