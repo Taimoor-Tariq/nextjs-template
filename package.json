@@ -16,17 +16,20 @@
     },
     "devDependencies": {
         "@tailwindcss/line-clamp": "^0.4.2",
+        "@types/node": "18.14.6",
+        "@types/react": "18.0.28",
         "autoprefixer": "^10.4.13",
         "postcss": "^8.4.21",
         "prettier-plugin-tailwindcss": "^0.2.4",
         "sass": "^1.58.3",
-        "tailwindcss": "^3.2.7"
+        "tailwindcss": "^3.2.7",
+        "typescript": "4.9.5"
     },
     "scripts": {
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "prettier": "prettier -w \"**/*.{js,jsx,json,yml}\""
+        "prettier": "prettier -w \"**/*.{ts,tsx,json,yml}\""
     }
 }
