@@ -30,7 +30,6 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint",
         "prettier": "prettier -w \"**/*.{ts,tsx,json,yml}\""
     }
 }
